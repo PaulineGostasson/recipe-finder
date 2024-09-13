@@ -5,13 +5,13 @@ import './App.css';
 const App = () => {
   const [query, setQuery] = useState('');
   const [recipes, setRecipes] = useState([]);
-  const [selectedRecipe, setSelectedRecipe] = useState(null); // For storing the selected recipe details
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [error, setError] = useState('');
-
-  const apiKey = '2aae163fad61447188bbf5233e3f8965'; // Replace with your Spoonacular API Key
 
   // Fetch recipes from Spoonacular API
   const fetchRecipes = async () => {
+    const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY; // Use Vite's way to access env vars
+    console.log("API Key:", apiKey); // Ensure the key is being read correctly
     if (!query) {
       setError('Please enter an ingredient.');
       return;
@@ -21,7 +21,7 @@ const App = () => {
       const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients`, {
         params: {
           ingredients: query,
-          number: 10, // number of results
+          number: 10,
           apiKey: apiKey,
         },
       });
@@ -34,6 +34,7 @@ const App = () => {
 
   // Fetch full recipe details when a recipe is clicked
   const fetchRecipeDetails = async (id) => {
+    const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY; // Use the same API key
     try {
       const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
         params: {
