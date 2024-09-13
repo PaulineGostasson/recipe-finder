@@ -13,7 +13,7 @@
 
 ## Screenshots
 
-![Recipe Finder Screenshot](URL_to_screenshot)  
+![Recipe Finder Screenshot](https://ibb.co/CwLtnWs)  
 *A screenshot of the Recipe Finder interface.*
 
 ## Technologies Used
@@ -38,15 +38,58 @@ To get a local copy of the project up and running, follow these steps.
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/recipe-finder.git
+   git clone https://github.com/PaulineGostasson/recipe-finder.git
    cd recipe-finder
 
-2. **Install dependencies**
+2. **Install dependencies**:
    
    ```bash
-   npm install
+   npm install or yarn install
 
-or
+3. **Set up environment var**:
+   
+   - Create a .env file in the root of the project
+   - Add the following environment var (replace your-api-key with yout actual Spoonacular API key):
+     ```bash
+     VITE_SPOONACULAR_API_KEY=your-api-key
 
-  ```bash
-   yarn install
+4. **Run the application**:
+
+   Using npm or Yarn:
+   ```bash
+   npm run dev or yarn dev
+
+This will start the Vite development server, and the app will be accessible at your localhost.
+
+### Usage
+
+1. Enter an ingredient (e.g., "chicken") into the search bar and click Find Recipes.
+2. A list of recipes will be displayed. Click on a recipe to view its details.
+3. A modal will pop up with the full recipe, including instructions and other information.
+
+### Env Variables
+
+Make sure to use the following env variable to store your API key:
+- VITE_SPOONACULAR_API_KEY: Your Spoonacular API key, used for accessing the Spoonacular API.
+
+### How to Obtain an API Key
+
+1. Visit the Spoonacular API website.
+2. Sign up and obtain an API key.
+3. Add the API key to your .env file as shown above.
+
+### Vercel Deployment
+
+I used Vercel to easily deploy my app and you can also do this if u follow these steps:
+
+1. Set up a new project in Vercel.
+2. Add your VITE_SPOONACULAR_API_KEY to the environment variables in the Vercel Dashboard.
+3. Deploy your app by pushing to your GitHub repository or using the Vercel CLI.
+
+### Author
+- Pau Göstasson: [yourwebsite.com](https://paulinegostasson.vercel.app/)
+- GitHub: @PaulineGostasson
+
+### Acknowledgements
+
+- Last but not least thanks to Spoonacular for providing the recipe API.
