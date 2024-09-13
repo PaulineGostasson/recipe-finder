@@ -13,7 +13,7 @@
 
 ## Screenshots
 
-![Recipe Finder Screenshot](https://imgur.com/a/BFkmOkB)  
+![Recipe Finder Screenshot](./assets/screenshot.png) 
 *A screenshot of the Recipe Finder interface.*
 
 ## Technologies Used
